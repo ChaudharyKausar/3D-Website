@@ -1,6 +1,6 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+// import * as THREE from 'three';
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 // ------------------gsap for navbar------------------
 var menu=document.querySelector('.nav i');
@@ -36,65 +36,65 @@ close.addEventListener('click',function(){
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('planet');
-  if (!container) {
-    console.error('Container not found!');
-    return;
-  }
+// document.addEventListener('DOMContentLoaded', () => {
+//   const container = document.getElementById('planet');
+//   if (!container) {
+//     console.error('Container not found!');
+//     return;
+//   }
 
-  const scene = new THREE.Scene();
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+//   const scene = new THREE.Scene();
+//   const renderer = new THREE.WebGLRenderer({ antialias: true });
+//   const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
 
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-  container.appendChild(renderer.domElement);
+//   renderer.setSize(container.clientWidth, container.clientHeight);
+//   renderer.setPixelRatio(window.devicePixelRatio);
+//   container.appendChild(renderer.domElement);
 
-  camera.position.set(0, 0, 30);
+//   camera.position.set(0, 0, 30);
 
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.enablePan = false;
-  controls.minDistance = 10;
-  controls.maxDistance = 50;
+//   const controls = new OrbitControls(camera, renderer.domElement);
+//   controls.enableDamping = true;
+//   controls.enablePan = false;
+//   controls.minDistance = 10;
+//   controls.maxDistance = 50;
 
-  const spotLight = new THREE.SpotLight(0x8AFFFF, 1000);
-  spotLight.position.set(0, 100, 10);
-  scene.add(spotLight);
+//   const spotLight = new THREE.SpotLight(0x8AFFFF, 1000);
+//   spotLight.position.set(0, 100, 10);
+//   scene.add(spotLight);
 
-  const loader = new GLTFLoader();
-  loader.load('static/blue-palnet/scene.gltf',
-    (gltf) => {
-      const mesh = gltf.scene;
-      mesh.scale.set(5, 5, 5);
-      mesh.position.set(0, 0, 0);
-      scene.add(mesh);
+//   const loader = new GLTFLoader();
+//   loader.load('static/blue-palnet/scene.gltf',
+//     (gltf) => {
+//       const mesh = gltf.scene;
+//       mesh.scale.set(5, 5, 5);
+//       mesh.position.set(0, 0, 0);
+//       scene.add(mesh);
 
-      document.getElementById('progress').style.display = 'none';
-    },
-    (xhr) => {
-      console.log(`Model loading: ${(xhr.loaded / xhr.total * 100).toFixed(2)}%`);
-    },
-    (error) => {
-      console.error('An error occurred:', error);
-    }
-  );
+//       document.getElementById('progress').style.display = 'none';
+//     },
+//     (xhr) => {
+//       console.log(`Model loading: ${(xhr.loaded / xhr.total * 100).toFixed(2)}%`);
+//     },
+//     (error) => {
+//       console.error('An error occurred:', error);
+//     }
+//   );
 
-  window.addEventListener('resize', () => {
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
+//   window.addEventListener('resize', () => {
+//     camera.aspect = container.clientWidth / container.clientHeight;
+//     camera.updateProjectionMatrix();
+//     renderer.setSize(container.clientWidth, container.clientHeight);
+//   });
 
-  function animate() {
-    controls.update();
-    // renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-  }
+//   function animate() {
+//     controls.update();
+//     renderer.render(scene, camera);
+//     requestAnimationFrame(animate);
+//   }
 
-  // animate();
-});
+//   animate();
+// });
 
 
 
