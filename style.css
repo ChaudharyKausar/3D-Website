@@ -393,3 +393,17 @@ body {
   color: #12e3ffee;
   background: transparent;
 }
+
+/* -------------------------Responsive Started------------- */
+@media screen and (max-width:1150px) {
+  .home{
+    padding: 0.2rem 2rem 2rem;
+  }
+  .cards{
+    padding: 0 2rem;
+    gap: 1rem;
+  }
+  .horizontal-Scrolling{
+    height: 50vh;
+  }
+}

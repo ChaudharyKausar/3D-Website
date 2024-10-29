@@ -101,6 +101,7 @@ close.addEventListener('click',function(){
 // --------------------------Scipt end for planet---------------------
 
 //--------------------------------Script for Cursor-----------------
+
 const cursor = document.querySelector('.cursor');
 var timeout;
 
